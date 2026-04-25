@@ -1,12 +1,5 @@
-import him from "@/assets/tour-himalaya.jpg";
-import var_ from "@/assets/tour-varanasi.jpg";
-import meg from "@/assets/tour-meghalaya.jpg";
-
-const tours = [
-  { img: him, name: "Spiti Valley Odyssey", region: "Himachal", days: "9 Days", price: "₹84,000" },
-  { img: var_, name: "Sacred Ganges", region: "Varanasi", days: "5 Days", price: "₹52,000" },
-  { img: meg, name: "Living Roots", region: "Meghalaya", days: "7 Days", price: "₹68,000" },
-];
+import { Link } from "@tanstack/react-router";
+import { tours } from "@/data/tours";
 
 export function Tours() {
   return (
@@ -20,24 +13,34 @@ export function Tours() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {tours.map((t) => (
-            <article key={t.name} className="group">
-              <div className="relative aspect-[4/5] overflow-hidden mb-5">
+            <article key={t.slug} className="group">
+              <Link
+                to="/tours/$slug"
+                params={{ slug: t.slug }}
+                className="block relative aspect-[4/5] overflow-hidden mb-5 rounded-2xl"
+              >
                 <img
                   src={t.img}
                   alt={t.name}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
-              </div>
+              </Link>
               <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">
                 {t.region} · {t.days}
               </p>
               <h3 className="font-display text-2xl mb-3">{t.name}</h3>
-              <div className="flex items-center justify-between border-t border-foreground/15 pt-4">
-                <span className="text-sm">From <strong className="font-medium">{t.price}</strong></span>
-                <a href="#contact" className="text-xs uppercase tracking-[0.2em] hover:text-accent transition">
+              <div className="flex items-center justify-between border-t border-border pt-4">
+                <span className="text-sm text-muted-foreground">
+                  From <strong className="font-medium text-foreground">{t.price}</strong>
+                </span>
+                <Link
+                  to="/tours/$slug"
+                  params={{ slug: t.slug }}
+                  className="text-xs uppercase tracking-[0.2em] hover:text-accent transition"
+                >
                   View Details →
-                </a>
+                </Link>
               </div>
             </article>
           ))}
