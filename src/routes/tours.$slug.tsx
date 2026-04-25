@@ -95,11 +95,10 @@ function TourPage() {
               Enquire on WhatsApp
             </a>
             <Link
-              to="/"
-              hash="contact"
+              to="/tours"
               className="mt-3 w-full inline-flex items-center justify-center border border-border text-foreground px-6 py-3.5 text-xs uppercase tracking-[0.2em] hover:bg-secondary transition rounded-full"
             >
-              Send Enquiry
+              All Tours
             </Link>
           </aside>
         </div>

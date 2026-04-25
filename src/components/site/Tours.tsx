@@ -2,17 +2,23 @@ import { Link } from "@tanstack/react-router";
 import { tours } from "@/data/tours";
 
 export function Tours() {
+  const featured = tours.slice(0, 6);
   return (
     <section id="tours" className="py-28 md:py-36 bg-background">
       <div className="container-x">
-        <div className="mb-14">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">03 — Signature Tours</p>
-          <h2 className="font-display text-4xl md:text-6xl font-light max-w-3xl">
-            Journeys, thoughtfully composed.
-          </h2>
+        <div className="flex items-end justify-between mb-14 gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">03 — Signature Tours</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light max-w-3xl">
+              Journeys, thoughtfully composed.
+            </h2>
+          </div>
+          <Link to="/tours" className="hidden md:inline-block text-sm uppercase tracking-[0.2em] border-b border-foreground pb-1 hover:text-accent transition">
+            All {tours.length} tours
+          </Link>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {tours.map((t) => (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {featured.map((t) => (
             <article key={t.slug} className="group">
               <Link
                 to="/tours/$slug"
@@ -44,6 +50,15 @@ export function Tours() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-14 text-center">
+          <Link
+            to="/tours"
+            className="inline-flex items-center gap-3 border border-foreground text-foreground px-7 py-4 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition rounded-full"
+          >
+            View All {tours.length} Tours →
+          </Link>
         </div>
       </div>
     </section>
