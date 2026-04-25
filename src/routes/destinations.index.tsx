@@ -3,7 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { destinations } from "@/data/destinations";
 
-export const Route = createFileRoute("/destinations")({
+export const Route = createFileRoute("/destinations/")({
   head: () => ({
     meta: [
       { title: "Destinations — Voyage" },
