@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import kerala from "@/assets/dest-kerala.jpg";
 import rajasthan from "@/assets/dest-rajasthan.jpg";
 import ladakh from "@/assets/dest-ladakh.jpg";
@@ -21,17 +22,18 @@ export function Destinations() {
               Places that <span className="italic">stay with you</span>.
             </h2>
           </div>
-          <a href="#tours" className="hidden md:block text-sm uppercase tracking-[0.2em] border-b border-foreground pb-1">
+          <Link to="/destinations" className="hidden md:inline-block text-sm uppercase tracking-[0.2em] border-b border-foreground pb-1 hover:text-accent transition">
             View all
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[260px] gap-4">
           {items.map((d) => (
-            <a
+            <Link
               key={d.name}
-              href="#tours"
-              className={`group relative overflow-hidden ${d.span} h-[360px] md:h-auto`}
+              to="/destinations/$slug"
+              params={{ slug: d.name.toLowerCase() }}
+              className={`group relative overflow-hidden rounded-2xl ${d.span} h-[360px] md:h-auto`}
             >
               <img
                 src={d.img}
@@ -44,8 +46,14 @@ export function Destinations() {
                 <p className="text-[10px] uppercase tracking-[0.3em] text-white/70 mb-1">{d.tag}</p>
                 <h3 className="font-display text-2xl md:text-3xl font-medium">{d.name}</h3>
               </div>
-            </a>
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-8 md:hidden text-center">
+          <Link to="/destinations" className="inline-block text-sm uppercase tracking-[0.2em] border-b border-foreground pb-1">
+            View all destinations
+          </Link>
         </div>
       </div>
     </section>
