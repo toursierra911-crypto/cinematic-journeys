@@ -68,27 +68,27 @@ html { scroll-behavior: smooth; }
   --font-display: "Poppins", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  --radius: 0.5rem;
-  /* Premium travel palette: white, black, soft beige, muted green */
-  --background: oklch(0.985 0.005 80);          /* warm white */
-  --foreground: oklch(0.18 0.01 60);             /* near black */
-  --card: oklch(0.99 0.005 80);
-  --card-foreground: oklch(0.18 0.01 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.01 60);
-  --primary: oklch(0.18 0.01 60);                /* deep ink */
-  --primary-foreground: oklch(0.985 0.005 80);
-  --secondary: oklch(0.93 0.018 80);             /* soft beige */
-  --secondary-foreground: oklch(0.25 0.01 60);
-  --muted: oklch(0.95 0.01 80);
-  --muted-foreground: oklch(0.45 0.01 60);
-  --accent: oklch(0.52 0.04 145);                /* muted green */
-  --accent-foreground: oklch(0.985 0.005 80);
+  --radius: 0.75rem;
+  /* Premium dark travel palette: deep ink, soft beige accents, muted green */
+  --background: oklch(0.16 0.005 80);
+  --foreground: oklch(0.96 0.01 80);
+  --card: oklch(0.20 0.006 80);
+  --card-foreground: oklch(0.96 0.01 80);
+  --popover: oklch(0.20 0.006 80);
+  --popover-foreground: oklch(0.96 0.01 80);
+  --primary: oklch(0.95 0.012 80);
+  --primary-foreground: oklch(0.16 0.005 80);
+  --secondary: oklch(0.24 0.008 80);
+  --secondary-foreground: oklch(0.95 0.012 80);
+  --muted: oklch(0.22 0.006 80);
+  --muted-foreground: oklch(0.68 0.015 80);
+  --accent: oklch(0.62 0.07 145);
+  --accent-foreground: oklch(0.10 0.005 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.62 0.07 145);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
