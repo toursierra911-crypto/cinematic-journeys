@@ -14,7 +14,7 @@ export function Nav() {
         </nav>
         <a
           href="#contact"
-          className="hidden md:inline-flex text-xs uppercase tracking-[0.2em] border border-white/40 text-white px-4 py-2 hover:bg-white hover:text-foreground transition"
+          className="hidden md:inline-flex text-xs uppercase tracking-[0.2em] border border-white/40 text-white px-5 py-2.5 hover:bg-white hover:text-black transition rounded-full"
         >
           Plan a Trip
         </a>

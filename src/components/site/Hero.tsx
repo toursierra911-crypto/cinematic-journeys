@@ -38,7 +38,7 @@ export function Hero() {
         <div className="fade-up mt-10 flex items-center gap-6" style={{ animationDelay: "0.3s" }}>
           <a
             href="#tours"
-            className="group inline-flex items-center gap-3 bg-white text-foreground px-7 py-4 text-sm uppercase tracking-[0.18em] hover:bg-secondary transition"
+            className="group inline-flex items-center gap-3 bg-white text-black px-7 py-4 text-sm uppercase tracking-[0.18em] hover:bg-white/90 transition rounded-full"
           >
             Explore Tours
             <span className="transition-transform group-hover:translate-x-1">→</span>
