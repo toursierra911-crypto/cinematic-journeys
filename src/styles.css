@@ -1,8 +1,11 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 @custom-variant dark (&:is(.dark *));
+
+html { scroll-behavior: smooth; }
 
 /*
  * Design system definition.
@@ -62,21 +65,25 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius: 0.5rem;
+  /* Premium travel palette: white, black, soft beige, muted green */
+  --background: oklch(0.985 0.005 80);          /* warm white */
+  --foreground: oklch(0.18 0.01 60);             /* near black */
+  --card: oklch(0.99 0.005 80);
+  --card-foreground: oklch(0.18 0.01 60);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.18 0.01 60);
+  --primary: oklch(0.18 0.01 60);                /* deep ink */
+  --primary-foreground: oklch(0.985 0.005 80);
+  --secondary: oklch(0.93 0.018 80);             /* soft beige */
+  --secondary-foreground: oklch(0.25 0.01 60);
+  --muted: oklch(0.95 0.01 80);
+  --muted-foreground: oklch(0.45 0.01 60);
+  --accent: oklch(0.52 0.04 145);                /* muted green */
+  --accent-foreground: oklch(0.985 0.005 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
