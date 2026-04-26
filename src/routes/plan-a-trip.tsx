@@ -4,18 +4,18 @@ import { MessageCircle, Sparkles, ArrowRight, Check } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { destinations } from "@/data/destinations";
 
-const WHATSAPP_NUMBER = "919999999999";
+const WHATSAPP_NUMBER = "918160958530";
 
 export const Route = createFileRoute("/plan-a-trip")({
   head: () => ({
     meta: [
-      { title: "Plan a Trip — VOYA·GE" },
+      { title: "Plan a Trip — TOURSIERRA" },
       {
         name: "description",
         content:
-          "Plan your next journey with VOYA·GE. Chat with us directly on WhatsApp or customize your trip — destinations, dates, travellers and more.",
+          "Plan your next journey with TOURSIERRA. Chat with us directly on WhatsApp or customize your trip — destinations, dates, travellers and more.",
       },
-      { property: "og:title", content: "Plan a Trip — VOYA·GE" },
+      { property: "og:title", content: "Plan a Trip — TOURSIERRA" },
       {
         property: "og:description",
         content:
@@ -59,7 +59,7 @@ function PlanATripPage() {
 
 function ChoiceCards({ onCustomize }: { onCustomize: () => void }) {
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hi VOYA·GE, I'd like to plan a journey. Could you help me get started?",
+    "Hi TOURSIERRA, I'd like to plan a journey. Could you help me get started?",
   )}`;
 
   return (
@@ -173,7 +173,7 @@ function CustomTripForm({ onBack }: { onBack: () => void }) {
       new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
 
     const lines = [
-      "Hello VOYA·GE team,",
+      "Hello TOURSIERRA team,",
       "",
       "I'd like to plan a customized journey. Here are my details:",
       "",

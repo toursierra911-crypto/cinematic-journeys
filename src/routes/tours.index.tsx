@@ -7,10 +7,10 @@ import { tours } from "@/data/tours";
 export const Route = createFileRoute("/tours/")({
   head: () => ({
     meta: [
-      { title: "All Tours — Voyage" },
+      { title: "All Tours — Toursierra" },
       { name: "description", content: "Browse every curated journey across India — Himalayas, deserts, backwaters, islands and more." },
-      { property: "og:title", content: "All Tours — Voyage" },
-      { property: "og:description", content: "Every Voyage journey, in one place." },
+      { property: "og:title", content: "All Tours — Toursierra" },
+      { property: "og:description", content: "Every Toursierra journey, in one place." },
     ],
   }),
   component: ToursIndex,

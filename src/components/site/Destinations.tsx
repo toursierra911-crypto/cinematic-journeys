@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import kerala from "@/assets/dest-kerala.jpg";
+import spiti from "@/assets/spiti/cloudy.jpeg";
 import rajasthan from "@/assets/dest-rajasthan.jpg";
 import ladakh from "@/assets/dest-ladakh.jpg";
-import goa from "@/assets/dest-goa.jpg";
+import manali from "@/assets/manali/snow-view.jpg";
 
 const items = [
-  { name: "Kerala", tag: "Backwaters", img: kerala, span: "md:col-span-2 md:row-span-2" },
+  { name: "Spiti Valley", tag: "Moonland", img: spiti, span: "md:col-span-2 md:row-span-2" },
   { name: "Rajasthan", tag: "Desert", img: rajasthan, span: "" },
   { name: "Ladakh", tag: "High Himalaya", img: ladakh, span: "" },
-  { name: "Goa", tag: "Coastline", img: goa, span: "md:col-span-2" },
+  { name: "Manali", tag: "Mountain Valley", img: manali, span: "md:col-span-2" },
 ];
 
 export function Destinations() {

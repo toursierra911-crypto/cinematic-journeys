@@ -12,13 +12,13 @@ export const Route = createFileRoute("/destinations/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.dest.name} — Voyage` },
+          { title: `${loaderData.dest.name} — Toursierra` },
           { name: "description", content: loaderData.dest.blurb },
-          { property: "og:title", content: `${loaderData.dest.name} — Voyage` },
+          { property: "og:title", content: `${loaderData.dest.name} — Toursierra` },
           { property: "og:description", content: loaderData.dest.blurb },
           { property: "og:image", content: loaderData.dest.img },
         ]
-      : [{ title: "Destination — Voyage" }],
+      : [{ title: "Destination — Toursierra" }],
   }),
   notFoundComponent: () => (
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
@@ -33,9 +33,10 @@ export const Route = createFileRoute("/destinations/$slug")({
 
 function DestinationPage() {
   const { dest } = Route.useLoaderData();
-  const others = destinations.filter((d) => d.name !== dest.name).slice(0, 6);
-  // simple gallery: feature image + others as a strip
-  const gallery = [dest.img, ...others.map((o) => o.img)];
+  // Use destination's own gallery if available, otherwise fallback to others
+  const gallery = dest.gallery && dest.gallery.length > 0
+    ? dest.gallery
+    : [dest.img];
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -79,7 +80,7 @@ function DestinationPage() {
         <div className="container-x text-center">
           <h2 className="font-display text-3xl md:text-5xl font-light mb-6">Plan a journey to {dest.name}.</h2>
           <a
-            href={`https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20${encodeURIComponent(dest.name)}`}
+            href={`https://wa.me/918160958530?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20${encodeURIComponent(dest.name)}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-7 py-4 text-sm uppercase tracking-[0.18em] hover:opacity-90 transition rounded-full"

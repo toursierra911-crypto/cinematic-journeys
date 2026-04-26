@@ -12,13 +12,13 @@ export const Route = createFileRoute("/tours/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.tour.name} — Voyage` },
+          { title: `${loaderData.tour.name} — Toursierra` },
           { name: "description", content: loaderData.tour.tagline },
-          { property: "og:title", content: `${loaderData.tour.name} — Voyage` },
+          { property: "og:title", content: `${loaderData.tour.name} — Toursierra` },
           { property: "og:description", content: loaderData.tour.tagline },
           { property: "og:image", content: loaderData.tour.img },
         ]
-      : [{ title: "Tour — Voyage" }],
+      : [{ title: "Tour — Toursierra" }],
   }),
   notFoundComponent: () => (
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
@@ -87,7 +87,7 @@ function TourPage() {
               </div>
             </dl>
             <a
-              href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20tour"
+              href="https://wa.me/918160958530?text=Hi%2C%20I%27m%20interested%20in%20the%20tour"
               target="_blank"
               rel="noreferrer"
               className="mt-6 w-full inline-flex items-center justify-center bg-accent text-accent-foreground px-6 py-3.5 text-xs uppercase tracking-[0.2em] hover:opacity-90 transition rounded-full"

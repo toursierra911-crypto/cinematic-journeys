@@ -1,4 +1,4 @@
-import exp from "@/assets/experience.jpg";
+import g4 from "@/assets/g4.jpg";
 
 const highlights = [
   { n: "01", t: "Personalized itineraries", d: "Every journey shaped around your pace and curiosity." },
@@ -11,7 +11,7 @@ export function Experience() {
     <section id="experience" className="py-28 md:py-36 bg-secondary">
       <div className="container-x grid md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-[4/5] overflow-hidden">
-          <img src={exp} alt="Premium tented stay" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={g4} alt="Premium tented stay" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">02 — Experience</p>

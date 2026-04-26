@@ -13,7 +13,7 @@ import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Voyage — Travel Beyond Limits | Curated Luxury Journeys Across India" },
+      { title: "Toursierra — Travel Beyond Limits | Curated Luxury Journeys Across India" },
       {
         name: "description",
         content:
@@ -21,25 +21,23 @@ export const Route = createFileRoute("/")({
       },
       { name: "keywords", content: "luxury travel India, curated tours, Himalaya tours, Kerala backwaters, Rajasthan tours, Ladakh, premium travel agency, India holiday packages" },
       { name: "robots", content: "index, follow" },
-      { name: "author", content: "Voyage" },
-      { property: "og:title", content: "Voyage — Travel Beyond Limits" },
+      { name: "author", content: "Toursierra" },
+      { property: "og:title", content: "Toursierra — Travel Beyond Limits" },
       { property: "og:description", content: "Curated luxury journeys across India — Himalayas, deserts, backwaters & coast." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://voyage.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Voyage — Travel Beyond Limits" },
+      { name: "twitter:title", content: "Toursierra — Travel Beyond Limits" },
       { name: "twitter:description", content: "Curated luxury journeys across India." },
     ],
-    links: [{ rel: "canonical", href: "https://voyage.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "TravelAgency",
-          name: "Voyage",
+          name: "Toursierra",
           description: "Premium curated travel experiences across India.",
-          url: "https://voyage.lovable.app/",
+          url: "https://voyage.lovable.app/",  // TODO: change url
           areaServed: "India",
           priceRange: "$$$",
         }),
