@@ -14,14 +14,12 @@ export function Nav() {
           <Link to="/" hash="gallery" className="hover:text-white transition">Gallery</Link>
           <Link to="/" hash="contact" className="hover:text-white transition">Contact</Link>
         </nav>
-        <a
-          href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20journey"
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to="/plan-a-trip"
           className="hidden md:inline-flex text-xs uppercase tracking-[0.2em] border border-white/40 text-white px-5 py-2.5 hover:bg-white hover:text-black transition rounded-full"
         >
           Plan a Trip
-        </a>
+        </Link>
       </div>
     </header>
   );
