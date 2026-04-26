@@ -16,8 +16,6 @@ export function Hero() {
         preload="auto"
         controls={false}
         disablePictureInPicture
-        // @ts-expect-error - non-standard but supported
-        disableRemotePlayback
         poster={heroImg}
       >
         <source
