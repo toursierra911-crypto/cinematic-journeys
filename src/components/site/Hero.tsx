@@ -22,20 +22,21 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
 
       {/* Content */}
-      <div className="relative z-10 h-full container-x flex flex-col justify-center md:justify-end pt-24 pb-20 md:pb-32">
-        <p className="fade-up text-[10px] md:text-sm uppercase tracking-[0.35em] md:tracking-[0.4em] text-white/80 mb-6 md:mb-6">
+      <div className="relative z-10 h-full container-x flex flex-col justify-between md:justify-end pt-28 pb-16 md:pb-32">
+        <p className="fade-up text-[10px] md:text-sm uppercase tracking-[0.35em] md:tracking-[0.4em] text-white/80">
           Curated Journeys · Est. 2014
         </p>
-        <h1 className="fade-up font-display text-white font-semibold text-[clamp(2.5rem,8vw,7rem)] leading-[1.05] md:leading-[0.95] max-w-5xl tracking-tight">
-          Travel Beyond <em className="not-italic font-light italic opacity-90">Limits</em>
-        </h1>
-        <p
-          className="fade-up mt-6 md:mt-8 max-w-xl text-white/85 text-base md:text-lg font-light leading-relaxed"
-          style={{ animationDelay: "0.15s" }}
-        >
-          Curated journeys across India — from misted Himalayan peaks to silent desert dunes.
-        </p>
-        <div className="fade-up mt-8 md:mt-10 flex flex-wrap items-center gap-5 md:gap-6" style={{ animationDelay: "0.3s" }}>
+        <div className="flex flex-col">
+          <h1 className="fade-up font-display text-white font-semibold text-[clamp(2.5rem,8vw,7rem)] leading-[1.05] md:leading-[0.95] max-w-5xl tracking-tight">
+            Travel Beyond <em className="not-italic font-light italic opacity-90">Limits</em>
+          </h1>
+          <p
+            className="fade-up mt-5 md:mt-8 max-w-xl text-white/85 text-base md:text-lg font-light leading-relaxed"
+            style={{ animationDelay: "0.15s" }}
+          >
+            Curated journeys across India — from misted Himalayan peaks to silent desert dunes.
+          </p>
+          <div className="fade-up mt-7 md:mt-10 flex flex-wrap items-center gap-5 md:gap-6" style={{ animationDelay: "0.3s" }}>
           <a
             href="#tours"
             className="group inline-flex items-center gap-3 bg-white text-black px-6 md:px-7 py-3.5 md:py-4 text-xs md:text-sm uppercase tracking-[0.18em] hover:bg-white/90 transition rounded-full"
