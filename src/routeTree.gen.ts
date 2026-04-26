@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PlanATripRouteImport } from './routes/plan-a-trip'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToursIndexRouteImport } from './routes/tours.index'
 import { Route as DestinationsIndexRouteImport } from './routes/destinations.index'
 import { Route as ToursSlugRouteImport } from './routes/tours.$slug'
 import { Route as DestinationsSlugRouteImport } from './routes/destinations.$slug'
 
+const PlanATripRoute = PlanATripRouteImport.update({
+  id: '/plan-a-trip',
+  path: '/plan-a-trip',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -36,13 +42,14 @@ const ToursSlugRoute = ToursSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsSlugRoute = DestinationsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => DestinationsRoute,
+  id: '/destinations/$slug',
+  path: '/destinations/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/plan-a-trip': typeof PlanATripRoute
   '/destinations/$slug': typeof DestinationsSlugRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/destinations/': typeof DestinationsIndexRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/plan-a-trip': typeof PlanATripRoute
   '/destinations/$slug': typeof DestinationsSlugRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/destinations': typeof DestinationsIndexRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/plan-a-trip': typeof PlanATripRoute
   '/destinations/$slug': typeof DestinationsSlugRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/destinations/': typeof DestinationsIndexRoute
@@ -67,15 +76,23 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/plan-a-trip'
     | '/destinations/$slug'
     | '/tours/$slug'
     | '/destinations/'
     | '/tours/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/destinations/$slug' | '/tours/$slug' | '/destinations' | '/tours'
+  to:
+    | '/'
+    | '/plan-a-trip'
+    | '/destinations/$slug'
+    | '/tours/$slug'
+    | '/destinations'
+    | '/tours'
   id:
     | '__root__'
     | '/'
+    | '/plan-a-trip'
     | '/destinations/$slug'
     | '/tours/$slug'
     | '/destinations/'
@@ -84,6 +101,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PlanATripRoute: typeof PlanATripRoute
+  DestinationsSlugRoute: typeof DestinationsSlugRoute
   ToursSlugRoute: typeof ToursSlugRoute
   DestinationsIndexRoute: typeof DestinationsIndexRoute
   ToursIndexRoute: typeof ToursIndexRoute
@@ -91,6 +110,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/plan-a-trip': {
+      id: '/plan-a-trip'
+      path: '/plan-a-trip'
+      fullPath: '/plan-a-trip'
+      preLoaderRoute: typeof PlanATripRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,16 +147,18 @@ declare module '@tanstack/react-router' {
     }
     '/destinations/$slug': {
       id: '/destinations/$slug'
-      path: '/$slug'
+      path: '/destinations/$slug'
       fullPath: '/destinations/$slug'
       preLoaderRoute: typeof DestinationsSlugRouteImport
-      parentRoute: typeof DestinationsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PlanATripRoute: PlanATripRoute,
+  DestinationsSlugRoute: DestinationsSlugRoute,
   ToursSlugRoute: ToursSlugRoute,
   DestinationsIndexRoute: DestinationsIndexRoute,
   ToursIndexRoute: ToursIndexRoute,
