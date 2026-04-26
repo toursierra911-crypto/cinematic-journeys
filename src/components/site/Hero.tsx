@@ -6,23 +6,13 @@ export function Hero() {
       id="top"
       className="relative h-[100svh] min-h-[600px] w-full overflow-hidden"
     >
-      {/* Background video with image fallback */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover pointer-events-none [&::-webkit-media-controls]:!hidden [&::-webkit-media-controls-start-playback-button]:!hidden [&::-webkit-media-controls-overlay-play-button]:!hidden"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        controls={false}
-        disablePictureInPicture
-        poster={heroImg}
-      >
-        <source
-          src="https://cdn.coverr.co/videos/coverr-aerial-view-of-mountains-7913/1080p.mp4"
-          type="video/mp4"
-        />
-      </video>
+      {/* Background image */}
+      <img
+        src={heroImg}
+        alt="Curated luxury travel destinations across India"
+        className="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+      />
 
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/75" />
