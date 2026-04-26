@@ -36,9 +36,9 @@ const ToursSlugRoute = ToursSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsSlugRoute = DestinationsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => DestinationsRoute,
+  id: '/destinations/$slug',
+  path: '/destinations/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -84,6 +84,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DestinationsSlugRoute: typeof DestinationsSlugRoute
   ToursSlugRoute: typeof ToursSlugRoute
   DestinationsIndexRoute: typeof DestinationsIndexRoute
   ToursIndexRoute: typeof ToursIndexRoute
@@ -121,16 +122,17 @@ declare module '@tanstack/react-router' {
     }
     '/destinations/$slug': {
       id: '/destinations/$slug'
-      path: '/$slug'
+      path: '/destinations/$slug'
       fullPath: '/destinations/$slug'
       preLoaderRoute: typeof DestinationsSlugRouteImport
-      parentRoute: typeof DestinationsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DestinationsSlugRoute: DestinationsSlugRoute,
   ToursSlugRoute: ToursSlugRoute,
   DestinationsIndexRoute: DestinationsIndexRoute,
   ToursIndexRoute: ToursIndexRoute,
