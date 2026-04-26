@@ -33,9 +33,10 @@ export const Route = createFileRoute("/destinations/$slug")({
 
 function DestinationPage() {
   const { dest } = Route.useLoaderData();
-  const others = destinations.filter((d) => d.name !== dest.name).slice(0, 6);
-  // simple gallery: feature image + others as a strip
-  const gallery = [dest.img, ...others.map((o) => o.img)];
+  // Use destination's own gallery if available, otherwise fallback to others
+  const gallery = dest.gallery && dest.gallery.length > 0
+    ? dest.gallery
+    : [dest.img];
 
   return (
     <main className="min-h-screen bg-background text-foreground">

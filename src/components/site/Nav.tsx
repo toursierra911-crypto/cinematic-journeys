@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.svg";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,8 @@ export function Nav() {
           onClick={() => setOpen(false)}
           className="font-display text-lg font-semibold tracking-wide text-white drop-shadow"
         >
-          VOYA<span className="text-white/60">·</span>GE
+          {/* VOYA<span className="text-white/60">·</span>GE */}
+          <img src={logo} alt="Toursierra logo" className="h-8 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm text-white/85">
