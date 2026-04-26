@@ -47,6 +47,7 @@ export function Hero() {
           <a href="#experience" className="text-white/80 text-xs md:text-sm uppercase tracking-[0.18em] hover:text-white">
             Our Story
           </a>
+          </div>
         </div>
       </div>
 
