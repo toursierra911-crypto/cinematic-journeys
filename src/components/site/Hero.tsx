@@ -2,7 +2,7 @@ import heroImg from "@/assets/hero.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="relative h-screen min-h-[640px] w-full overflow-hidden">
+    <section id="top" className="relative h-[100svh] min-h-[560px] w-full overflow-hidden">
       {/* Background video with image fallback */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
