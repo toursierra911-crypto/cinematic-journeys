@@ -17,7 +17,7 @@ export function Destinations() {
       <div className="container-x">
         <div className="flex items-end justify-between mb-14 gap-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">01 — Destinations</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">03 — Destinations</p>
             <h2 className="font-display text-4xl md:text-6xl font-light max-w-2xl">
               Places that <span className="italic">stay with you</span>.
             </h2>
