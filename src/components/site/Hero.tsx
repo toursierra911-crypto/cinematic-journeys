@@ -8,11 +8,16 @@ export function Hero() {
     >
       {/* Background video with image fallback */}
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover pointer-events-none [&::-webkit-media-controls]:!hidden [&::-webkit-media-controls-start-playback-button]:!hidden [&::-webkit-media-controls-overlay-play-button]:!hidden"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        // @ts-expect-error - non-standard but supported
+        disableRemotePlayback
         poster={heroImg}
       >
         <source
