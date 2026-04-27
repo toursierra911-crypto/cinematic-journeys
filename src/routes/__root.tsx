@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "f" },
+      { name: "description", content: "Premium travel website showcasing curated Indian journeys with a cinematic, minimal design." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "f" },
+      { property: "og:description", content: "Premium travel website showcasing curated Indian journeys with a cinematic, minimal design." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "f" },
+      { name: "twitter:description", content: "Premium travel website showcasing curated Indian journeys with a cinematic, minimal design." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/994888a3-1ced-40fb-9499-d4c7ea5a1674/id-preview-986d845b--d59897d5-2f24-47c9-bb3c-bc5c4b586064.lovable.app-1777238249176.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/994888a3-1ced-40fb-9499-d4c7ea5a1674/id-preview-986d845b--d59897d5-2f24-47c9-bb3c-bc5c4b586064.lovable.app-1777238249176.png" },
     ],
     links: [
       {
