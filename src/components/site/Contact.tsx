@@ -11,7 +11,7 @@ export function Contact() {
             Tell us where you'd like to go — or let us suggest. We respond on WhatsApp within minutes.
           </p>
           <a
-            href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20journey"
+            href="https://wa.me/918160958530?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20journey"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-5 text-sm uppercase tracking-[0.18em] hover:opacity-90 transition rounded-full"
@@ -22,13 +22,13 @@ export function Contact() {
             Chat on WhatsApp
           </a>
           <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Or call +91 99999 99999
+            Or call +91 81609 58530
           </p>
         </div>
       </div>
 
       <div className="container-x mt-24 pt-8 border-t border-border flex flex-col md:flex-row gap-4 justify-between text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        <span>© {new Date().getFullYear()} Voyage</span>
+        <span>© {new Date().getFullYear()} Toursierra</span>
         <span>Crafted in India</span>
       </div>
     </section>

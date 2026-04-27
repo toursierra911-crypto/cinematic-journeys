@@ -6,9 +6,9 @@ import { destinations } from "@/data/destinations";
 export const Route = createFileRoute("/destinations/")({
   head: () => ({
     meta: [
-      { title: "Destinations — Voyage" },
+      { title: "Destinations — Toursierra" },
       { name: "description", content: "Explore every region we travel — from Himalayan passes to backwater villages." },
-      { property: "og:title", content: "Destinations — Voyage" },
+      { property: "og:title", content: "Destinations — Toursierra" },
       { property: "og:description", content: "A visual atlas of curated destinations across India." },
     ],
   }),

@@ -8,7 +8,7 @@ export function Tours() {
       <div className="container-x">
         <div className="flex items-end justify-between mb-14 gap-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">03 — Signature Tours</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">01 — Signature Tours</p>
             <h2 className="font-display text-4xl md:text-6xl font-light max-w-3xl">
               Journeys, thoughtfully composed.
             </h2>
