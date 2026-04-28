@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import spiti from "@/assets/spiti/cloudy.jpeg";
 import rajasthan from "@/assets/dest-rajasthan.jpg";
 import ladakh from "@/assets/dest-ladakh.jpg";
@@ -31,8 +31,7 @@ export function Destinations() {
           {items.map((d) => (
             <Link
               key={d.name}
-              to="/destinations/$slug"
-              params={{ slug: d.name.toLowerCase() }}
+              to={`/destinations/${d.name.toLowerCase()}`}
               className={`group relative overflow-hidden rounded-2xl ${d.span} h-[360px] md:h-auto`}
             >
               <img

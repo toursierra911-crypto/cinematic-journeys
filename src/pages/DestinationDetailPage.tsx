@@ -1,42 +1,20 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { destinations } from "@/data/destinations";
 
-export const Route = createFileRoute("/destinations/$slug")({
-  loader: ({ params }) => {
-    const dest = destinations.find((d) => d.name.toLowerCase() === params.slug.toLowerCase());
-    if (!dest) throw notFound();
-    return { dest };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.dest.name} — Toursierra` },
-          { name: "description", content: loaderData.dest.blurb },
-          { property: "og:title", content: `${loaderData.dest.name} — Toursierra` },
-          { property: "og:description", content: loaderData.dest.blurb },
-          { property: "og:image", content: loaderData.dest.img },
-        ]
-      : [{ title: "Destination — Toursierra" }],
-  }),
-  notFoundComponent: () => (
-    <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="font-display text-4xl mb-4">Destination not found</h1>
-        <Link to="/destinations" className="text-accent uppercase tracking-[0.2em] text-sm">← All Destinations</Link>
-      </div>
-    </div>
-  ),
-  component: DestinationPage,
-});
+export default function DestinationDetailPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const dest = destinations.find((d) => d.name.toLowerCase() === slug?.toLowerCase());
 
-function DestinationPage() {
-  const { dest } = Route.useLoaderData();
-  // Use destination's own gallery if available, otherwise fallback to others
-  const gallery = dest.gallery && dest.gallery.length > 0
-    ? dest.gallery
-    : [dest.img];
+  useEffect(() => {
+    if (dest) document.title = `${dest.name} — Toursierra`;
+  }, [dest]);
+
+  if (!dest) return <Navigate to="/destinations" replace />;
+
+  const gallery = dest.gallery && dest.gallery.length > 0 ? dest.gallery : [dest.img];
 
   return (
     <main className="min-h-screen bg-background text-foreground">

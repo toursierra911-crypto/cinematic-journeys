@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.svg";
@@ -26,16 +26,15 @@ export function Nav() {
           onClick={() => setOpen(false)}
           className="font-display text-lg font-semibold tracking-wide text-white drop-shadow"
         >
-          {/* VOYA<span className="text-white/60">·</span>GE */}
           <img src={logo} alt="Toursierra logo" className="h-8 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm text-white/85">
           <Link to="/destinations" className="hover:text-white transition">Destinations</Link>
           <Link to="/tours" className="hover:text-white transition">Tours</Link>
-          <Link to="/" hash="experience" className="hover:text-white transition">Experience</Link>
-          <Link to="/" hash="gallery" className="hover:text-white transition">Gallery</Link>
-          <Link to="/" hash="contact" className="hover:text-white transition">Contact</Link>
+          <Link to="/#experience" className="hover:text-white transition">Experience</Link>
+          <Link to="/#gallery" className="hover:text-white transition">Gallery</Link>
+          <Link to="/#contact" className="hover:text-white transition">Contact</Link>
         </nav>
 
         <Link
@@ -55,7 +54,6 @@ export function Nav() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-out ${
           open ? "max-h-[80vh]" : "max-h-0"
@@ -64,9 +62,9 @@ export function Nav() {
         <nav className="container-x flex flex-col gap-1 pb-6 pt-2 text-white/90">
           <Link to="/destinations" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Destinations</Link>
           <Link to="/tours" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Tours</Link>
-          <Link to="/" hash="experience" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Experience</Link>
-          <Link to="/" hash="gallery" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Gallery</Link>
-          <Link to="/" hash="contact" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Contact</Link>
+          <Link to="/#experience" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Experience</Link>
+          <Link to="/#gallery" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Gallery</Link>
+          <Link to="/#contact" onClick={() => setOpen(false)} className="py-3 border-b border-white/10 text-sm uppercase tracking-[0.2em]">Contact</Link>
           <Link
             to="/plan-a-trip"
             onClick={() => setOpen(false)}

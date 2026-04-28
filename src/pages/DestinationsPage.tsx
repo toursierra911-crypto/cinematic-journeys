@@ -1,21 +1,14 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { destinations } from "@/data/destinations";
 
-export const Route = createFileRoute("/destinations/")({
-  head: () => ({
-    meta: [
-      { title: "Destinations — Toursierra" },
-      { name: "description", content: "Explore every region we travel — from Himalayan passes to backwater villages." },
-      { property: "og:title", content: "Destinations — Toursierra" },
-      { property: "og:description", content: "A visual atlas of curated destinations across India." },
-    ],
-  }),
-  component: DestinationsPage,
-});
+export default function DestinationsPage() {
+  useEffect(() => {
+    document.title = "Destinations — Toursierra";
+  }, []);
 
-function DestinationsPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Nav />
@@ -41,8 +34,7 @@ function DestinationsPage() {
             {destinations.map((d) => (
               <Link
                 key={d.name}
-                to="/destinations/$slug"
-                params={{ slug: d.name.toLowerCase() }}
+                to={`/destinations/${d.name.toLowerCase()}`}
                 className="group relative aspect-[4/5] overflow-hidden rounded-2xl"
               >
                 <img
