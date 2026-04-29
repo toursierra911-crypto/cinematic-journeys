@@ -101,7 +101,7 @@ export const tours: Tour[] = [
   name: "Yulla Kanda Trek",
   region: "Himachal Pradesh (Kinnaur)",
   days: "6 Days",
-  price: "₹14,000",
+  price: "₹12,000",
   img: yulla,
   tagline: "Hidden lake. High-altitude trek. Untouched Kinnaur.",
   intro:
@@ -159,7 +159,7 @@ export const tours: Tour[] = [
   name: "Kedarkantha Trek",
   region: "Uttarakhand",
   days: "7 Days",
-  price: "+91 8160958530",
+  price: "₹13,000",
   img: kedarkantha,
   tagline: "Snow trek. Summit sunrise. Himalayan adventure.",
   intro:
@@ -225,7 +225,7 @@ export const tours: Tour[] = [
   name: "Royal Jaisalmer",
   region: "Rajasthan",
   days: "3 Days",
-  price: "6,000",
+  price: "₹7,000",
   img: rajasthan,
   tagline: "Golden fort. Desert dunes. Royal camping nights.",
   intro:
@@ -270,7 +270,7 @@ export const tours: Tour[] = [
   name: "Manali Kasol",
   region: "Himachal Pradesh",
   days: "7 Days",
-  price: "+91 8160958530",
+  price: "Contact for price",
   img: manali,
   tagline: "Trekking. River vibes. Adventure-packed Himalayan escape.",
   intro:
@@ -338,7 +338,7 @@ export const tours: Tour[] = [
   name: "Hampta Pass Trek",
   region: "Himachal Pradesh",
   days: "8 Days",
-  price: "+91 8160958530",
+  price: "₹10,000",
   img: hampta,
   tagline: "Cross valleys. Summit a Himalayan pass. Camp under stars.",
   intro:
@@ -408,7 +408,7 @@ export const tours: Tour[] = [
     name: "Leh to Leh Umling La Expedition",
     region: "Ladakh",
     days: "7 Days",
-    price: "+91 8160958530",
+    price: "Contact for price",
     img: biking,
     tagline: "Ride the highest roads on Earth.",
     intro:
@@ -443,7 +443,7 @@ export const tours: Tour[] = [
     name: "Delhi to Srinagar Umling La Expedition",
     region: "Ladakh",
     days: "12 Days",
-    price: "+91 8160958530",
+    price: "Contact for price",
     img: biking2,
     tagline: "The ultimate Ladakh circuit ride.",
     intro:
@@ -483,7 +483,7 @@ export const tours: Tour[] = [
     name: "Leh – Turtuk – Pangong Ride",
     region: "Ladakh",
     days: "6 Days",
-    price: "+91 8160958530",
+    price: "Contact for price",
     img: ladakh,
     tagline: "Explore the last village before LOC.",
     intro:
@@ -517,7 +517,7 @@ export const tours: Tour[] = [
     name: "Srinagar to Delhi Umling La Expedition",
     region: "Ladakh",
     days: "12 Days",
-    price: "+91 8160958530",
+    price: "Contact for price",
     img: biking3,
     tagline: "Ride across the Himalayas end-to-end.",
     intro:
