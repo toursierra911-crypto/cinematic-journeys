@@ -1,51 +1,31 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { getTour, tours } from "@/data/tours";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
-export const Route = createFileRoute("/tours/$slug")({
-  loader: ({ params }) => {
-    const tour = getTour(params.slug);
-    if (!tour) throw notFound();
-    return { tour };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.tour.name} — Toursierra` },
-          { name: "description", content: loaderData.tour.tagline },
-          { property: "og:title", content: `${loaderData.tour.name} — Toursierra` },
-          { property: "og:description", content: loaderData.tour.tagline },
-          { property: "og:image", content: loaderData.tour.img },
-        ]
-      : [{ title: "Tour — Toursierra" }],
-  }),
-  notFoundComponent: () => (
-    <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="font-display text-4xl mb-4">Tour not found</h1>
-        <Link to="/" className="text-accent uppercase tracking-[0.2em] text-sm">← Back home</Link>
-      </div>
-    </div>
-  ),
-  component: TourPage,
-});
+export default function TourDetailPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const tour = slug ? getTour(slug) : null;
 
-function TourPage() {
-  const { tour } = Route.useLoaderData();
+  useEffect(() => {
+    if (tour) document.title = `${tour.name} — Toursierra`;
+  }, [tour]);
+
+  if (!tour) return <Navigate to="/tours" replace />;
+
   const others = tours.filter((t) => t.slug !== tour.slug);
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      {/* Hero */}
       <section className="relative h-[90vh] min-h-[560px] w-full overflow-hidden">
         <img src={tour.img} alt={tour.name} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/80" />
         <div className="relative z-10 h-full container-x flex flex-col justify-end pb-20">
           <Link
-            to="/"
+            to="/tours"
             className="fade-up text-xs uppercase tracking-[0.3em] text-white/70 mb-6 hover:text-white w-fit"
           >
             ← All Tours
@@ -62,7 +42,6 @@ function TourPage() {
         </div>
       </section>
 
-      {/* Intro + meta */}
       <section className="py-24 md:py-32">
         <div className="container-x grid md:grid-cols-3 gap-16">
           <div className="md:col-span-2">
@@ -104,7 +83,6 @@ function TourPage() {
         </div>
       </section>
 
-      {/* Highlights */}
       <section className="py-20 bg-card">
         <div className="container-x">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Highlights</p>
@@ -122,7 +100,6 @@ function TourPage() {
         </div>
       </section>
 
-      {/* Itinerary */}
       <section className="py-24 md:py-32">
         <div className="container-x max-w-4xl">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Itinerary</p>
@@ -141,7 +118,6 @@ function TourPage() {
         </div>
       </section>
 
-      {/* Includes */}
       <section className="py-20 bg-card">
         <div className="container-x grid md:grid-cols-2 gap-12">
           <div>
@@ -151,17 +127,16 @@ function TourPage() {
             </h2>
           </div>
           <ul className="space-y-4">
-            {tour.includes.map((i) => (
-              <li key={i} className="flex gap-4 items-center border-b border-border pb-4">
+            {tour.includes.map((item) => (
+              <li key={item} className="flex gap-4 items-center border-b border-border pb-4">
                 <span className="text-accent">✦</span>
-                <span className="font-light">{i}</span>
+                <span className="font-light">{item}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Other tours */}
       <section className="py-24">
         <div className="container-x">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Continue Exploring</p>
@@ -170,8 +145,7 @@ function TourPage() {
             {others.map((t) => (
               <Link
                 key={t.slug}
-                to="/tours/$slug"
-                params={{ slug: t.slug }}
+                to={`/tours/${t.slug}`}
                 className="group block relative aspect-[16/10] overflow-hidden rounded-2xl"
               >
                 <img

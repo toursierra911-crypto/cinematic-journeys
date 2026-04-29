@@ -1,26 +1,18 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { tours } from "@/data/tours";
 
-export const Route = createFileRoute("/tours/")({
-  head: () => ({
-    meta: [
-      { title: "All Tours — Toursierra" },
-      { name: "description", content: "Browse every curated journey across India — Himalayas, deserts, backwaters, islands and more." },
-      { property: "og:title", content: "All Tours — Toursierra" },
-      { property: "og:description", content: "Every Toursierra journey, in one place." },
-    ],
-  }),
-  component: ToursIndex,
-});
-
 type View = "grid" | "list";
 
-function ToursIndex() {
+export default function ToursPage() {
   const [view, setView] = useState<View>("grid");
   const [region, setRegion] = useState<string>("All");
+
+  useEffect(() => {
+    document.title = "All Tours — Toursierra";
+  }, []);
 
   const regions = useMemo(() => ["All", ...Array.from(new Set(tours.map((t) => t.region.split(" ")[0])))], []);
   const filtered = region === "All" ? tours : tours.filter((t) => t.region.startsWith(region));
@@ -44,7 +36,6 @@ function ToursIndex() {
         </div>
       </section>
 
-      {/* Filters + view toggle */}
       <section className="border-y border-border sticky top-0 bg-background/90 backdrop-blur z-30">
         <div className="container-x flex flex-wrap items-center justify-between gap-4 py-4">
           <div className="flex flex-wrap gap-2">
@@ -90,8 +81,7 @@ function ToursIndex() {
               {filtered.map((t) => (
                 <article key={t.slug} className="group">
                   <Link
-                    to="/tours/$slug"
-                    params={{ slug: t.slug }}
+                    to={`/tours/${t.slug}`}
                     className="block relative aspect-[4/5] overflow-hidden mb-5 rounded-2xl"
                   >
                     <img
@@ -110,8 +100,7 @@ function ToursIndex() {
                       From <strong className="font-medium text-foreground">{t.price}</strong>
                     </span>
                     <Link
-                      to="/tours/$slug"
-                      params={{ slug: t.slug }}
+                      to={`/tours/${t.slug}`}
                       className="text-xs uppercase tracking-[0.2em] hover:text-accent transition"
                     >
                       View Details →
@@ -125,8 +114,7 @@ function ToursIndex() {
               {filtered.map((t) => (
                 <li key={t.slug}>
                   <Link
-                    to="/tours/$slug"
-                    params={{ slug: t.slug }}
+                    to={`/tours/${t.slug}`}
                     className="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_180px_140px_auto] items-center gap-4 md:gap-8 py-5"
                   >
                     <div className="aspect-[4/3] overflow-hidden rounded-lg">

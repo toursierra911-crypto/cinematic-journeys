@@ -1,33 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { MessageCircle, Sparkles, ArrowRight, Check } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { destinations } from "@/data/destinations";
 
 const WHATSAPP_NUMBER = "918160958530";
 
-export const Route = createFileRoute("/plan-a-trip")({
-  head: () => ({
-    meta: [
-      { title: "Plan a Trip — TOURSIERRA" },
-      {
-        name: "description",
-        content:
-          "Plan your next journey with TOURSIERRA. Chat with us directly on WhatsApp or customize your trip — destinations, dates, travellers and more.",
-      },
-      { property: "og:title", content: "Plan a Trip — TOURSIERRA" },
-      {
-        property: "og:description",
-        content:
-          "Customize your itinerary or chat with our travel concierge on WhatsApp.",
-      },
-    ],
-  }),
-  component: PlanATripPage,
-});
-
-function PlanATripPage() {
+export default function PlanATripPage() {
   const [mode, setMode] = useState<"choose" | "custom">("choose");
+
+  useEffect(() => {
+    document.title = "Plan a Trip — TOURSIERRA";
+  }, []);
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -198,7 +182,6 @@ function CustomTripForm({ onBack }: { onBack: () => void }) {
 
   return (
     <form onSubmit={handleSubmit} className="mt-12 md:mt-16 max-w-3xl space-y-10">
-      {/* Personal */}
       <Section title="About you">
         <div className="grid md:grid-cols-2 gap-5">
           <Field label="Full name" error={errors.name}>
@@ -234,7 +217,6 @@ function CustomTripForm({ onBack }: { onBack: () => void }) {
         </div>
       </Section>
 
-      {/* Dates */}
       <Section title="When">
         <div className="grid md:grid-cols-2 gap-5">
           <Field label="Start date" error={errors.startDate}>
@@ -260,7 +242,6 @@ function CustomTripForm({ onBack }: { onBack: () => void }) {
         </div>
       </Section>
 
-      {/* Destinations */}
       <Section title="Where" subtitle="Pick one or more">
         {errors.destinations && <p className="text-xs text-destructive mb-3">{errors.destinations}</p>}
         <div className="flex flex-wrap gap-2">
@@ -285,7 +266,6 @@ function CustomTripForm({ onBack }: { onBack: () => void }) {
         </div>
       </Section>
 
-      {/* Travellers */}
       <Section title="Who">
         <div className="grid md:grid-cols-3 gap-5">
           <Field label="Travellers" error={errors.travellers}>
@@ -327,7 +307,6 @@ function CustomTripForm({ onBack }: { onBack: () => void }) {
         </div>
       </Section>
 
-      {/* Budget & notes */}
       <Section title="Anything else">
         <div className="grid md:grid-cols-2 gap-5">
           <Field label="Budget per person (optional)">
@@ -393,15 +372,7 @@ function Section({ title, subtitle, children }: { title: string; subtitle?: stri
   );
 }
 
-function Field({
-  label,
-  error,
-  children,
-}: {
-  label: string;
-  error?: string;
-  children: React.ReactNode;
-}) {
+function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
   return (
     <label className="block">
       <span className="block text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-2">{label}</span>

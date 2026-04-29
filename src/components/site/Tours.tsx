@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { tours } from "@/data/tours";
 
 export function Tours() {
@@ -21,8 +21,7 @@ export function Tours() {
           {featured.map((t) => (
             <article key={t.slug} className="group">
               <Link
-                to="/tours/$slug"
-                params={{ slug: t.slug }}
+                to={`/tours/${t.slug}`}
                 className="block relative aspect-[4/5] overflow-hidden mb-5 rounded-2xl"
               >
                 <img
@@ -41,8 +40,7 @@ export function Tours() {
                   From <strong className="font-medium text-foreground">{t.price}</strong>
                 </span>
                 <Link
-                  to="/tours/$slug"
-                  params={{ slug: t.slug }}
+                  to={`/tours/${t.slug}`}
                   className="text-xs uppercase tracking-[0.2em] hover:text-accent transition"
                 >
                   View Details →
