@@ -97,6 +97,104 @@ export const tours: Tour[] = [
   ],
 },
 {
+  slug: "spiti-valley-bike-ride",
+  name: "Spiti Valley Bike Ride",
+  region: "Himachal Pradesh",
+  days: "9 Days",
+  price: "Starting from ₹21,500",
+  img: spiti,
+  tagline: "Ride through the raw beauty of the Himalayas.",
+  intro:
+    "An unforgettable high-altitude biking expedition through the breathtaking landscapes of Spiti Valley. Ride across mountain passes, remote villages, ancient monasteries, and crystal-clear lakes while experiencing the thrill of Himalayan adventure.",
+
+  highlights: [
+    "Kunzum La Pass",
+    "Jalori Pass",
+    "Chandratal Lake",
+    "Key Monastery",
+    "Hikkim & Komic",
+    "Chitkul Village",
+    "Atal Tunnel",
+    "Tabo Monastery",
+  ],
+
+  itinerary: [
+    {
+      day: "Day 1",
+      title: "Delhi to Kullu",
+      body: "Overnight Volvo journey from Delhi to Kullu.",
+    },
+    {
+      day: "Day 2",
+      title: "Arrival in Kullu",
+      body:
+        "Check-in at hotel, explore local markets, relax and acclimatize.",
+    },
+    {
+      day: "Day 3",
+      title: "Kullu to Sarahan via Jalori Pass",
+      body:
+        "Ride through Jibhi and cross the scenic Jalori Pass before reaching Sarahan.",
+    },
+    {
+      day: "Day 4",
+      title: "Sarahan to Sangla & Chitkul",
+      body:
+        "Explore Sangla Valley and visit Chitkul, the last inhabited village near the Indo-Tibetan border.",
+    },
+    {
+      day: "Day 5",
+      title: "Sangla to Kaza",
+      body:
+        "Ride through Nako, Gue, Tabo and Dhankar Monastery before reaching Kaza.",
+    },
+    {
+      day: "Day 6",
+      title: "Kaza Local Sightseeing",
+      body:
+        "Visit Key Monastery, Hikkim, Komic, and Langza village.",
+    },
+    {
+      day: "Day 7",
+      title: "Kaza to Chandratal",
+      body:
+        "Cross Chicham Bridge and Kunzum Pass before reaching Chandratal Lake.",
+    },
+    {
+      day: "Day 8",
+      title: "Chandratal to Manali",
+      body:
+        "Ride through Atal Tunnel and Solang Valley before departure to Delhi.",
+    },
+    {
+      day: "Day 9",
+      title: "Arrival in Delhi",
+      body: "Trip concludes with unforgettable Himalayan memories.",
+    },
+  ],
+
+  includes: [
+    "Royal Enfield Himalayan / Scram 411",
+    "Fuel for entire expedition",
+    "Accommodation in hotels, homestays & camps",
+    "Breakfast & Dinner",
+    "Backup vehicle support",
+    "Road Captain & Mechanic",
+    "Inner Line & Bike Permits",
+    "First Aid & Oxygen Cylinder",
+    "Volvo tickets (Delhi–Kullu & Manali–Delhi)",
+  ],
+
+  exclusions: [
+    "Lunch & personal expenses",
+    "Travel insurance",
+    "Bike damage charges",
+    "Entry tickets & camera fees",
+    "Airfare / train tickets",
+    "Anything not mentioned in inclusions",
+  ],
+};
+{
   slug: "yulla-kanda",
   name: "Yulla Kanda Trek",
   region: "Himachal Pradesh (Kinnaur)",
