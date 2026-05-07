@@ -5,6 +5,7 @@ import kedarkantha from "@/assets/kedarkantha/main.jpg"
 import manali from "@/assets/manali/main.jpg";
 // import meg from "@/assets/tour-meghalaya.jpg";
 import hampta from "@/assets/hampta-pass/main.jpg";
+import spitiBike from "@/assets/spiti-bike/WhatsApp Image 2026-04-20 at 4.51.43 PM (6).jpeg";
 import rajasthan from "@/assets/dest-rajasthan.jpg";
 import biking from "@/assets/ladakh/biking-main.webp";
 import ladakh from "@/assets/dest-ladakh.jpg";
@@ -102,7 +103,7 @@ export const tours: Tour[] = [
   region: "Himachal Pradesh",
   days: "9 Days",
   price: "₹26,500",
-  img: spiti,
+  img: spitiBike,
   tagline: "Ride through the raw beauty of the Himalayas.",
   intro:
     "An unforgettable high-altitude biking expedition through the breathtaking landscapes of Spiti Valley. Ride across mountain passes, remote villages, ancient monasteries, and crystal-clear lakes while experiencing the thrill of Himalayan adventure.",
