@@ -101,7 +101,7 @@ export const tours: Tour[] = [
   name: "Spiti Valley Bike Ride",
   region: "Himachal Pradesh",
   days: "9 Days",
-  price: "Starting from ₹21,500",
+  price: "₹26,500",
   img: spiti,
   tagline: "Ride through the raw beauty of the Himalayas.",
   intro:
@@ -183,15 +183,6 @@ export const tours: Tour[] = [
     "Inner Line & Bike Permits",
     "First Aid & Oxygen Cylinder",
     "Volvo tickets (Delhi–Kullu & Manali–Delhi)",
-  ],
-
-  exclusions: [
-    "Lunch & personal expenses",
-    "Travel insurance",
-    "Bike damage charges",
-    "Entry tickets & camera fees",
-    "Airfare / train tickets",
-    "Anything not mentioned in inclusions",
   ],
 },
 {
