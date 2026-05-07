@@ -193,7 +193,7 @@ export const tours: Tour[] = [
     "Airfare / train tickets",
     "Anything not mentioned in inclusions",
   ],
-};
+},
 {
   slug: "yulla-kanda",
   name: "Yulla Kanda Trek",
